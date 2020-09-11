@@ -28,6 +28,12 @@ declare module "ebcdic-ascii" {
     toASCII(ebcdic: string): string
 
     /**
+     * Convert a EBCDIC hex string to an ISO-8859-1 Buffer
+     * @param ebcdic string - Hex representation of a EBCDIC string
+     */
+    toISO(ebcdic: string): Buffer
+
+    /**
      * Convert an ASCII hex string to a EBCDIC hex string
      * @param ebcdic string - ASCII string
      */
