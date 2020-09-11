@@ -2,82 +2,82 @@
 
 export default [
   {
-    hex: "0",
+    hex: "00",
     ebcdic: "Null",
     ascii: "Null",
   },
   {
-    hex: "1",
+    hex: "01",
     ebcdic: "SOH",
     ascii: "SOH",
   },
   {
-    hex: "2",
+    hex: "02",
     ebcdic: "STX",
     ascii: "STX",
   },
   {
-    hex: "3",
+    hex: "03",
     ebcdic: "ETX",
     ascii: "ETX",
   },
   {
-    hex: "4",
+    hex: "04",
     ebcdic: "SEL",
     ascii: "EOT",
   },
   {
-    hex: "5",
+    hex: "05",
     ebcdic: "HT",
     ascii: "ENQ",
   },
   {
-    hex: "6",
+    hex: "06",
     ebcdic: "RNL",
     ascii: "ACK",
   },
   {
-    hex: "7",
+    hex: "07",
     ebcdic: "Delete",
     ascii: "Bell",
   },
   {
-    hex: "8",
+    hex: "08",
     ebcdic: "GE",
     ascii: "Backspace",
   },
   {
-    hex: "9",
+    hex: "09",
     ebcdic: "SPS",
     ascii: "HT",
   },
   {
-    hex: "A",
+    hex: "0A",
     ebcdic: "RPT",
     ascii: "Line Feed",
   },
   {
-    hex: "B",
+    hex: "0B",
     ebcdic: "VT",
     ascii: "VT",
   },
   {
-    hex: "C",
+    hex: "0C",
     ebcdic: "Form Feed",
     ascii: "Form Feed",
   },
   {
-    hex: "D",
+    hex: "0D",
     ebcdic: "Carriage Return",
     ascii: "Carriage Return",
   },
   {
-    hex: "E",
+    hex: "0E",
     ebcdic: "SO",
     ascii: "SO",
   },
   {
-    hex: "F",
+    hex: "0F",
     ebcdic: "SI",
     ascii: "SI",
   },

@@ -39,17 +39,28 @@ export default class EbcdicAscii {
    */
   toASCII(ebcdic: string) {
     const ebcdicCodes = this.splitHex(ebcdic).map((a) => a.toUpperCase())
-    const asciiHex = ebcdicCodes.map((code) => this.charToASCII(code)).join("")
+    const isoHex = ebcdicCodes.map((code) => this.charToASCII(code)).join("")
 
-    return iconv.decode(Buffer.from(asciiHex, "hex"), "ISO-8859-1")
+    return iconv.decode(Buffer.from(isoHex, "hex"), "ISO-8859-1")
+  }
+
+  /**
+   * Convert a EBCDIC hex string to an ISO-8859-1 Buffer
+   * @param ebcdic string - Hex representation of a EBCDIC string
+   */
+  toISO(ebcdic: string) {
+    const ebcdicCodes = this.splitHex(ebcdic).map((a) => a.toUpperCase())
+    const isoHex = ebcdicCodes.map((code) => this.charToASCII(code)).join("")
+
+    return Buffer.from(isoHex, "hex")
   }
 
   /**
    * Convert an ASCII hex string to a EBCDIC hex string
    * @param ebcdic string - ASCII string
    */
-  toEBCDIC(ascii: string) {
-    const asciiChars = this.splitHex(ascii).map((a) => a.toUpperCase())
+  toEBCDIC(asciiHex: string) {
+    const asciiChars = this.splitHex(asciiHex).map((a) => a.toUpperCase())
     const ebcdic = asciiChars.map((code) => this.charToEBCDIC(code)).join("")
     return ebcdic
   }
