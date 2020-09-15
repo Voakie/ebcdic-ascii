@@ -84,6 +84,9 @@ export default class EbcdicAscii {
     }
 
     const ebcdicEntry = this.table.find((e) => e.hex === ebcdicCode)
+    if (ebcdicEntry?.ebcdic.startsWith("!") && ebcdicEntry.ebcdic.endsWith("m")) {
+      return Buffer.from(ebcdicEntry.ebcdic.replace("!", " ")).toString("hex")
+    }
     const asciiEntry = this.table.find((e) => e.ascii === ebcdicEntry?.ebcdic)
     if (asciiEntry === undefined) {
       return "00"

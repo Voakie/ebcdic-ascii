@@ -163,17 +163,17 @@ export default [
   },
   {
     hex: "20",
-    ebcdic: "DS",
+    ebcdic: "!\x1b[0m\x1b[92m",
     ascii: "Space",
   },
   {
     hex: "21",
-    ebcdic: "SOS",
+    ebcdic: "!\x1b[0m",
     ascii: "!",
   },
   {
     hex: "22",
-    ebcdic: "FS",
+    ebcdic: "!\x1b[0m\x1b[97m",
     ascii: '"',
   },
   {
@@ -243,7 +243,7 @@ export default [
   },
   {
     hex: "30",
-    ebcdic: " ",
+    ebcdic: "!\x1b[0m\x1b[96m",
     ascii: "0",
   },
   {
@@ -253,7 +253,7 @@ export default [
   },
   {
     hex: "32",
-    ebcdic: "SYN",
+    ebcdic: "!\x1b[0m\x1b[93m",
     ascii: "2",
   },
   {
@@ -288,12 +288,12 @@ export default [
   },
   {
     hex: "39",
-    ebcdic: "IT",
+    ebcdic: "!\x1b[0m\x1b[30m\x1b[101m",
     ascii: "9",
   },
   {
     hex: "3A",
-    ebcdic: "RFF",
+    ebcdic: "!\x1b[0m\x1b[94m",
     ascii: ":",
   },
   {
