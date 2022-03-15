@@ -5,6 +5,7 @@ Supported EBCDIC codesets:
 
 - 0037: English
 - 0273: German
+- 0278: Finnish/Swedish
 
 EBCDIC codesets were taken from [longpelaexpertise.com](http://www.longpelaexpertise.com/toolsCode.php).
 

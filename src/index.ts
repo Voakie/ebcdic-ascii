@@ -1,5 +1,6 @@
 import englishCodeset from "./tables/0037"
 import germanCodeset from "./tables/0273"
+import finsweCodeset from "./tables/0278"
 import iconv from "iconv-lite"
 
 interface IConvTableEntry {
@@ -8,11 +9,12 @@ interface IConvTableEntry {
   ascii: string
 }
 type ConvTable = IConvTableEntry[]
-type ConvTableName = "0273" | "0037"
+type ConvTableName = "0273" | "0037" | "0278"
 
 const convTables = {
   "0273": germanCodeset,
   "0037": englishCodeset,
+  "0278": finsweCodeset,
 }
 
 /**
@@ -23,7 +25,7 @@ export default class EbcdicAscii {
 
   /**
    *
-   * @param tableName string - May be "0273" for german and "0037" for english
+   * @param tableName string - May be "0273" for german, "0037" for english and "0278" for finnish/swedish
    */
   constructor(tableName: ConvTableName) {
     this.table = convTables[tableName]
