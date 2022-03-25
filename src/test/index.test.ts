@@ -46,7 +46,7 @@ describe("ebcdic-ascii", () => {
     expect(ascii).toEqual("ÖÄÜ öäü Test ßtring")
   })
 
-  it("should convert german ASCII to EBCDIC and back", () => {
+  it("should convert finnish/swedish ASCII to EBCDIC and back", () => {
     const converter = new EBCDIC("0278")
     const ebcdic = converter.toEBCDIC(
       Buffer.from("ÖÄÅ öäå Test String !@#¤%&/()[]{}^'*_-:.;,", "ascii").toString("hex"),
@@ -69,7 +69,7 @@ describe("ebcdic-ascii", () => {
     expect(ebcdic).toEqual(ebcdicTestStringEN)
   })
 
-  it("should convert english EBCDIC to ISO and back", () => {
+  it("should convert finnish/swedish EBCDIC to ISO and back", () => {
     const converter = new EBCDIC("0278")
     const isoHex = converter.toISO(ebcdicTestStringFI_SE)
     const ebcdic = converter.toEBCDIC(isoHex.toString("hex"))
