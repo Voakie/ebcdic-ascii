@@ -4,7 +4,7 @@ declare interface IConvTableEntry {
   ascii: string
 }
 declare type ConvTable = IConvTableEntry[]
-declare type ConvTableName = "0273" | "0037"
+declare type ConvTableName = "0273" | "0037" | "0278"
 
 declare module "ebcdic-ascii" {
   /**
@@ -15,7 +15,7 @@ declare module "ebcdic-ascii" {
 
     /**
      *
-     * @param tableName string - May be "0273" for german and "0037" for english
+     * @param tableName string - May be "0273" for german, "0037" for english and "0278" for finnish/swedish
      */
     constructor(tableName: ConvTableName)
 
