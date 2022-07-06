@@ -44,6 +44,7 @@ export default class EbcdicAscii {
       this.asciiToEbcdicTable[asciiCode] = ebcdicCode
       this.ebcdicToAsciiTable[ebcdicCode] = asciiCode
     })
+    this.ebcdicToAsciiTable["00"] = "00"
   }
 
   /**
