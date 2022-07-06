@@ -1,6 +1,6 @@
 {
   "name": "ebcdic-ascii",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "Node.js module for converting between EBCDIC and ASCII (ISO-8859-1)",
   "main": "out/index.js",
   "scripts": {
