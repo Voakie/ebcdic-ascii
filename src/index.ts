@@ -101,10 +101,10 @@ export default class EbcdicAscii {
 
   /**
    * Convert an ASCII hex char to a EBCDIC hex char
-   * @param ebcdic string - Hex code for an ASCII char
+   * @param ascii string - Hex code for an ASCII char
    */
   charToEBCDIC(asciiCode: string) {
-    const ebcdicCode = this.ebcdicToAsciiTable[asciiCode];
+    const ebcdicCode = this.asciiToEbcdicTable[asciiCode];
     if (ebcdicCode === undefined) {
       throw new Error(`Invalid char sequence ${asciiCode}`)
     }
