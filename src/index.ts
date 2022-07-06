@@ -10,6 +10,7 @@ interface IConvTableEntry {
 }
 type ConvTable = IConvTableEntry[]
 type ConvTableName = "0273" | "0037" | "0278"
+type QuickLookupTable = { [name: string]: string }
 
 const convTables = {
   "0273": germanCodeset,
@@ -21,18 +22,29 @@ const convTables = {
  * Class for converting between EBCDIC and ASCII (ISO-8859-1)
  */
 export default class EbcdicAscii {
-  table: ConvTable
+  asciiToEbcdicTable: QuickLookupTable = {}
+  ebcdicToAsciiTable: QuickLookupTable = {}
 
   /**
    *
    * @param tableName string - May be "0273" for german, "0037" for english and "0278" for finnish/swedish
    */
   constructor(tableName: ConvTableName) {
-    this.table = convTables[tableName]
+    this.setTable(tableName)
   }
 
   setTable(tableName: ConvTableName) {
-    this.table = convTables[tableName]
+    const simpleTable: ConvTable = convTables[tableName]
+    
+    simpleTable.forEach((tableItem) => {
+      const asciiCode: string = tableItem.hex; 
+      const ebcdicEntry = simpleTable.find((e) => e.ebcdic === tableItem?.ascii)
+      const ebcdicCode: string = ebcdicEntry ? ebcdicEntry.hex : "00"
+
+      this.asciiToEbcdicTable[asciiCode] = ebcdicCode
+      this.ebcdicToAsciiTable[ebcdicCode] = asciiCode
+    })
+    this.ebcdicToAsciiTable["00"] = "00"
   }
 
   /**
@@ -81,32 +93,22 @@ export default class EbcdicAscii {
    * @param ebcdic string - Hex code for a EBCDIC char
    */
   charToASCII(ebcdicCode: string) {
-    if (ebcdicCode.length > 2) {
-      throw new Error("Invalid char sequence size")
+    const asciiCode = this.ebcdicToAsciiTable[ebcdicCode];
+    if (asciiCode === undefined) {
+      throw new Error(`Invalid char sequence ${ebcdicCode}`)
     }
-
-    const ebcdicEntry = this.table.find((e) => e.hex === ebcdicCode)
-    const asciiEntry = this.table.find((e) => e.ascii === ebcdicEntry?.ebcdic)
-    if (asciiEntry === undefined) {
-      return "00"
-    }
-    return asciiEntry.hex
+    return asciiCode; 
   }
 
   /**
    * Convert an ASCII hex char to a EBCDIC hex char
-   * @param ebcdic string - Hex code for an ASCII char
+   * @param ascii string - Hex code for an ASCII char
    */
   charToEBCDIC(asciiCode: string) {
-    if (asciiCode.length > 2) {
-      throw new Error("Invalid char sequence size")
+    const ebcdicCode = this.asciiToEbcdicTable[asciiCode];
+    if (ebcdicCode === undefined) {
+      throw new Error(`Invalid char sequence ${asciiCode}`)
     }
-
-    const asciiEntry = this.table.find((e) => e.hex === asciiCode)
-    const ebcdicEntry = this.table.find((e) => e.ebcdic === asciiEntry?.ascii)
-    if (ebcdicEntry === undefined) {
-      return "00"
-    }
-    return ebcdicEntry.hex
+    return ebcdicCode; 
   }
 }
