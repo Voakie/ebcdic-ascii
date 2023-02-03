@@ -1,22 +1,8 @@
-import englishCodeset from "./tables/0037"
-import germanCodeset from "./tables/0273"
-import finsweCodeset from "./tables/0278"
+import { ConvTableName, convTables, IConvTableEntry } from "./tables"
 import iconv from "iconv-lite"
 
-interface IConvTableEntry {
-  hex: string
-  ebcdic: string
-  ascii: string
-}
 type ConvTable = IConvTableEntry[]
-type ConvTableName = "0273" | "0037" | "0278"
 type QuickLookupTable = { [name: string]: string }
-
-const convTables = {
-  "0273": germanCodeset,
-  "0037": englishCodeset,
-  "0278": finsweCodeset,
-}
 
 /**
  * Class for converting between EBCDIC and ASCII (ISO-8859-1)
@@ -35,9 +21,9 @@ export default class EbcdicAscii {
 
   setTable(tableName: ConvTableName) {
     const simpleTable: ConvTable = convTables[tableName]
-    
+
     simpleTable.forEach((tableItem) => {
-      const asciiCode: string = tableItem.hex; 
+      const asciiCode: string = tableItem.hex
       const ebcdicEntry = simpleTable.find((e) => e.ebcdic === tableItem?.ascii)
       const ebcdicCode: string = ebcdicEntry ? ebcdicEntry.hex : "00"
 
@@ -93,11 +79,11 @@ export default class EbcdicAscii {
    * @param ebcdic string - Hex code for a EBCDIC char
    */
   charToASCII(ebcdicCode: string) {
-    const asciiCode = this.ebcdicToAsciiTable[ebcdicCode];
+    const asciiCode = this.ebcdicToAsciiTable[ebcdicCode]
     if (asciiCode === undefined) {
       throw new Error(`Invalid char sequence ${ebcdicCode}`)
     }
-    return asciiCode; 
+    return asciiCode
   }
 
   /**
@@ -105,10 +91,10 @@ export default class EbcdicAscii {
    * @param ascii string - Hex code for an ASCII char
    */
   charToEBCDIC(asciiCode: string) {
-    const ebcdicCode = this.asciiToEbcdicTable[asciiCode];
+    const ebcdicCode = this.asciiToEbcdicTable[asciiCode]
     if (ebcdicCode === undefined) {
       throw new Error(`Invalid char sequence ${asciiCode}`)
     }
-    return ebcdicCode; 
+    return ebcdicCode
   }
 }
