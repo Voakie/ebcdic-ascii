@@ -6,8 +6,10 @@ Supported EBCDIC codesets:
 - 0037: English
 - 0273: German
 - 0278: Finnish/Swedish
+- 1047: Latin 1/Open Systems
 
-EBCDIC codesets were taken from [longpelaexpertise.com](http://www.longpelaexpertise.com/toolsCode.php).
+0xxx EBCDIC codesets were taken from [longpelaexpertise.com](http://www.longpelaexpertise.com/toolsCode.php).
+1047 EBCDIC codeset was taken from [this source](https://zims-en.kiwix.campusafrica.gos.orange.com/wikipedia_en_all_nopic/A/EBCDIC_1047).
 
 ## Usage
 

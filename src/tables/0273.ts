@@ -194,7 +194,7 @@ export default [
   {
     hex: "26",
     ebcdic: "ETB",
-    ascii: "&amp;",
+    ascii: "&",
   },
   {
     hex: "27",
@@ -304,7 +304,7 @@ export default [
   {
     hex: "3C",
     ebcdic: "DC4",
-    ascii: "&lt;",
+    ascii: "<",
   },
   {
     hex: "3D",
@@ -314,7 +314,7 @@ export default [
   {
     hex: "3E",
     ebcdic: " ",
-    ascii: "&gt;",
+    ascii: ">",
   },
   {
     hex: "3F",
@@ -383,7 +383,7 @@ export default [
   },
   {
     hex: "4C",
-    ebcdic: "&lt;",
+    ebcdic: "<",
     ascii: "L",
   },
   {
@@ -403,7 +403,7 @@ export default [
   },
   {
     hex: "50",
-    ebcdic: "&amp;",
+    ebcdic: "&",
     ascii: "P",
   },
   {
@@ -553,7 +553,7 @@ export default [
   },
   {
     hex: "6E",
-    ebcdic: "&gt;",
+    ebcdic: ">",
     ascii: "n",
   },
   {
@@ -639,7 +639,7 @@ export default [
   {
     hex: "7F",
     ebcdic: '"',
-    ascii: "",
+    ascii: "",
   },
   {
     hex: "80",

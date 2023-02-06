@@ -154,7 +154,7 @@ export default [
   { hex: "96", ebcdic: "o", ascii: "SPA" },
   { hex: "97", ebcdic: "p", ascii: "EPA" },
   { hex: "98", ebcdic: "q", ascii: "SOS" },
-  { hex: "99", ebcdic: "r", ascii: "" },
+  { hex: "99", ebcdic: "r", ascii: " " },
   { hex: "9A", ebcdic: "ª", ascii: "SCI" },
   { hex: "9B", ebcdic: "º", ascii: "CSI" },
   { hex: "9C", ebcdic: "æ", ascii: "ST" },
