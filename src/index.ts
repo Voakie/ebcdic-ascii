@@ -34,8 +34,8 @@ export default class EbcdicAscii {
   }
 
   /**
-   * Convert a EBCDIC hex string to an ASCII string
-   * @param ebcdic string - Hex representation of a EBCDIC string
+   * Convert an EBCDIC hex string to an ASCII string
+   * @param ebcdic string - Hex representation of an EBCDIC string
    */
   toASCII(ebcdic: string) {
     const ebcdicCodes = this.splitHex(ebcdic).map((a) => a.toUpperCase())
@@ -45,8 +45,8 @@ export default class EbcdicAscii {
   }
 
   /**
-   * Convert a EBCDIC hex string to an ISO-8859-1 Buffer
-   * @param ebcdic string - Hex representation of a EBCDIC string
+   * Convert an EBCDIC hex string to an ISO-8859-1 Buffer
+   * @param ebcdic string - Hex representation of an EBCDIC string
    */
   toISO(ebcdic: string) {
     const ebcdicCodes = this.splitHex(ebcdic).map((a) => a.toUpperCase())
@@ -56,18 +56,17 @@ export default class EbcdicAscii {
   }
 
   /**
-   * Convert an ASCII hex string to a EBCDIC hex string
-   * @param ebcdic string - ASCII string
+   * Convert an ASCII hex string to an EBCDIC hex string
+   * @param asciiHex string - ASCII string
    */
   toEBCDIC(asciiHex: string) {
     const asciiChars = this.splitHex(asciiHex).map((a) => a.toUpperCase())
-    const ebcdic = asciiChars.map((code) => this.charToEBCDIC(code)).join("")
-    return ebcdic
+    return asciiChars.map((code) => this.charToEBCDIC(code)).join("")
   }
 
   /**
    * `AA2E30EE` -> [`AA`, `2E`, `30`, `EE`]
-   * @param ebcdicString string - Hex representation of a EBCDIC string
+   * @param ebcdicString string - Hex representation of an EBCDIC string
    */
   splitHex(ebcdicString: string): string[] {
     const res = ebcdicString.match(/(..?)/g)
@@ -75,8 +74,8 @@ export default class EbcdicAscii {
   }
 
   /**
-   * Convert a EBCDIC hex char to an ASCII hex char
-   * @param ebcdic string - Hex code for a EBCDIC char
+   * Convert an EBCDIC hex char to an ASCII hex char
+   * @param ebcdicCode string - Hex code for an EBCDIC char
    */
   charToASCII(ebcdicCode: string) {
     const asciiCode = this.ebcdicToAsciiTable[ebcdicCode]
@@ -87,8 +86,8 @@ export default class EbcdicAscii {
   }
 
   /**
-   * Convert an ASCII hex char to a EBCDIC hex char
-   * @param ascii string - Hex code for an ASCII char
+   * Convert an ASCII hex char to an EBCDIC hex char
+   * @param asciiCode string - Hex code for an ASCII char
    */
   charToEBCDIC(asciiCode: string) {
     const ebcdicCode = this.asciiToEbcdicTable[asciiCode]
