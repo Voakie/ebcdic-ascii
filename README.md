@@ -13,9 +13,20 @@ Supported EBCDIC codesets:
 
 ## Usage
 
+### Importing with `import`
+
 ```js
 import EBCDIC from "ebcdic-ascii"
+```
 
+### Importing with `require`
+
+```js
+const EBCDIC = require("ebcdic-ascii").default
+```
+
+### Basic Usage
+```js
 const converter = new EBCDIC("0037")
 
 converter.toASCII("E385A2A340D485A2A2818785")
