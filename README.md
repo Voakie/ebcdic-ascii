@@ -10,6 +10,7 @@ Supported EBCDIC codesets:
 - 1047: Latin 1/Open Systems
 
 0xxx EBCDIC codesets were taken from [longpelaexpertise.com.au](http://www.longpelaexpertise.com.au/toolsCode.php).
+
 1047 EBCDIC codeset was taken from [this source](https://zims-en.kiwix.campusafrica.gos.orange.com/wikipedia_en_all_nopic/A/EBCDIC_1047).
 
 ## Usage
