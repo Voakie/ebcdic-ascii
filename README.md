@@ -39,3 +39,14 @@ converter.toEBCDIC("54657374204D657373616765")
 ```
 
 Check out `index.d.ts` for documentation
+
+## Contributions
+
+Feel free to add more languages in the same manner as the existing ones. When preparing a merge request, make sure to also
+write meaningful tests for your code. All contributions are highly appreciated!
+
+Kind regards to all contributors that have helped to maintain this module:
+- High Performance optimizations by [@SeanHollen](https://github.com/SeanHollen)
+- 0297 French added by [Damartex Group](https://damartex.com/) and [@kherdier](https://github.com/kherdier)
+- 1047 Latin added by [@leo1553](https://github.com/leo1553)
+- 0278 Finnish/Swedish added by [@markus-peltola](https://github.com/markus-peltola)
