@@ -24,7 +24,7 @@ import EBCDIC from "ebcdic-ascii"
 ### Importing with `require`
 
 ```js
-const EBCDIC = require("ebcdic-ascii").default
+const EBCDIC = require("ebcdic-ascii")
 ```
 
 ### Basic Usage
